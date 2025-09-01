@@ -14,6 +14,7 @@ from minisweagent.run.extra.swebench import (
     EnvironmentType,
     get_environment,
 )
+from minisweagent.run.utils.save import save_traj
 
 app = typer.Typer(add_completion=False)
 
@@ -51,6 +52,7 @@ def main(
         **(_config.get("agent", {}) | {"mode": "yolo"}),
     )
     agent.run(instance["problem_statement"])
+    save_traj(agent, Path("my_run_summary.traj.json"))
 
 
 if __name__ == "__main__":
