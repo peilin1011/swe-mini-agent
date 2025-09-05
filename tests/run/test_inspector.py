@@ -47,6 +47,7 @@ def sample_swebench_trajectory():
             "exit_status": "Submitted",
             "submission": "Fixed the issue",
             "model_stats": {"instance_cost": 0.05, "api_calls": 3},
+            "mini_version": "1.7.0",
         },
         "messages": [
             {"role": "system", "content": "You are a helpful assistant."},
@@ -55,6 +56,14 @@ def sample_swebench_trajectory():
             {"role": "user", "content": [{"type": "text", "text": "File contents here."}]},
             {"role": "assistant", "content": "Fixed!\n\n```bash\necho COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT\n```"},
         ],
+        "history_messages": [
+            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": "Please solve this issue."},
+            {"role": "assistant", "content": "I'll analyze the issue.\n\n```bash\ncat file.py\n```"},
+            {"role": "user", "content": "File contents here."},
+            {"role": "assistant", "content": "Fixed!\n\n```bash\necho COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT\n```"},
+        ],
+        "trajectory_format": "mini-swe-agent-1",
     }
 
 

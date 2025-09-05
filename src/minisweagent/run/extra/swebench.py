@@ -18,7 +18,7 @@ import yaml
 from datasets import load_dataset
 from rich.live import Live
 
-from minisweagent.agents.default import DefaultAgent
+from minisweagent.agents.default_s import DefaultAgent
 from minisweagent.config import builtin_config_dir, get_config_path
 from minisweagent.environments.docker import DockerEnvironment
 from minisweagent.environments.singularity import SingularityEnvironment

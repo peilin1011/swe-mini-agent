@@ -60,6 +60,7 @@ class Agent(Protocol):
     model: Model
     env: Environment
     messages: list[dict[str, str]]
+    history_messages: list[dict[str, str]]
 
     def run(self, task: str) -> tuple[str, str]: ...
 

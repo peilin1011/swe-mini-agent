@@ -37,12 +37,14 @@ def save_traj(
             "mini_version": __version__,
         },
         "messages": [],
+        "history_messages": [],
         "trajectory_format": "mini-swe-agent-1",
     } | kwargs
     if agent is not None:
         data["info"]["model_stats"]["instance_cost"] = agent.model.cost
         data["info"]["model_stats"]["api_calls"] = agent.model.n_calls
         data["messages"] = agent.messages
+        data["history_messages"] = getattr(agent, "history_messages", [])
     if extra_info:
         data["info"].update(extra_info)
 
